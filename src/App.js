@@ -3,15 +3,18 @@ import './App.css';
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shoppage';
 import Header from './components/header/header';
-import { Route } from 'react-router-dom';
+import SignInAndSignUp from './pages/signInAndSignUp/signInAndSignUp';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <div>
       <Header />
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/shop" component={ShopPage} />
-      {/* <HomePage /> */}
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/shop" component={ShopPage} />
+        <Route path="/signin" component={SignInAndSignUp} />
+      </Switch>
     </div>
   );
 }
